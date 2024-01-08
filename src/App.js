@@ -3,10 +3,7 @@ import Bill from './components/Bill'
 export default function App() {
     return (
         <div style={{ marginLeft: '10px' }}>
-            <div className='bill'>
-                <span>How much was the bill?</span>
-                <input type='number' style={{ marginLeft: '10px' }} />
-            </div>
+            <Bill />
             <div className='valueService'>
                 <span>How did you like the service?</span>
                 <select value={0} style={{ marginLeft: '10px' }}>
