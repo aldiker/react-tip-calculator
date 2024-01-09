@@ -27,10 +27,16 @@ export default function App() {
         setMyFriendServiceValue(0)
     }
 
-    const tip = Math.round((myServiceValue + myFriendServiceValue) / 2)
+    const tip = Math.round(
+        bill * ((myServiceValue + myFriendServiceValue) / (2 * 100))
+    )
 
     return (
         <div style={{ marginLeft: '10px' }}>
+            <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>
+                Tip Calculator
+            </h1>
+
             <Bill bill={bill} onChange={handleSetBill} />
             <Service
                 serviceValue={myServiceValue}

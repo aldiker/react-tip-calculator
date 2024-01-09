@@ -1,7 +1,7 @@
 export default function Service({ children, serviceValue, onChange }) {
     return (
         <div className='valueService'>
-            <span>{children}</span>
+            <label>{children}</label>
             <select
                 value={serviceValue}
                 style={{ marginLeft: '10px' }}
