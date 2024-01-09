@@ -32,11 +32,13 @@ select {
     font-size: 24px; /* Устанавливаем размер шрифта поля ввода */
     margin-left: 10px;
     background-color: whitesmoke;
+    text-align: center;
 }
 
 #root {
-    margin: 30px;
-    padding: 20px;
+    margin: 20px auto;
+    padding: 20px 20px;
     border: #ced4da solid 2px;
     border-radius: 20px;
+    max-width: fit-content;
 }
