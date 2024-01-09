@@ -1,9 +1,10 @@
-export default function Result() {
+export default function Result({ bill, tip }) {
+    const overall = bill + tip
     return (
         <div
             className='result'
             style={{ margin: '10px 0px 10px 0px ', fontWeight: 'bold' }}>
-            You pay $105 ($100 + $5 tip)
+            {`You pay $${overall} ($${bill} + $${tip} tip)`}
         </div>
     )
 }

@@ -10,16 +10,24 @@ export default function App() {
     const [myFriendServiceValue, setMyFriendServiceValue] = useState(0)
 
     const handleSetBill = (newValue) => {
-        setBill(newValue)
+        if (+newValue >= 0) setBill(+newValue)
     }
 
     const handleSetMyServiceValue = (newValue) => {
-        setMyServiceValue(newValue)
+        setMyServiceValue(+newValue)
     }
 
     const handleMyFriendServiceValue = (newValue) => {
-        setMyFriendServiceValue(newValue)
+        setMyFriendServiceValue(+newValue)
     }
+
+    const handleReset = () => {
+        setBill(0)
+        setMyServiceValue(0)
+        setMyFriendServiceValue(0)
+    }
+
+    const tip = Math.round((myServiceValue + myFriendServiceValue) / 2)
 
     return (
         <div style={{ marginLeft: '10px' }}>
@@ -34,8 +42,13 @@ export default function App() {
                 onChange={handleMyFriendServiceValue}>
                 How did your friend like the service?
             </Service>
-            <Result />
-            <Button />
+
+            {bill !== 0 && (
+                <>
+                    <Result bill={bill} tip={tip} />
+                    <Button onReset={handleReset} />
+                </>
+            )}
         </div>
     )
 }
